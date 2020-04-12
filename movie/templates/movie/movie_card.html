@@ -1,8 +1,14 @@
-<div class="card text-white bg-info" style="width: 18rem; height: 19rem;">
-  <img class="card-img-top" src="" alt="Card image cap">
+<div class="card text-white bg-secondary m-4" style="width: 18rem; height:26rem">
+  <img class="card-img-top" src="{{movie.poster_image.url}}" alt="Card image cap" style="height:12rem">
   <div class="card-body">
     <h5 class="card-title">{{movie.movie_name}}</h5>
-    <p class="card-text">{{movie.description}} .....</p>
-    <a href="#" class="btn btn-primary">Show More</a>
+    <p class="card-text">
+    	{% if movie.description|length > 100 %}
+    		{{ movie.truncate_str }}
+		{% else %}
+    		{{movie.description}}	
+    	{% endif %}
+    </p>
+    <a href="{% url 'movie_detail' movie.id %}" class="btn btn-warning" style="margin-left:4em">Show More</a>
   </div>
 </div>

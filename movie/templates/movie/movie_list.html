@@ -1,12 +1,23 @@
 {% extends "movie/base.html" %}
+{% load static %}
 {% block content %}
-	<div class="container">
-	  <div class="row">
-		{% for movie in movie_list %}
-			<div class="col-sm-4">
-		      {% include "movie/movie_card.html" %}
-		    </div>
-	    {% endfor %}
-	  </div>
+	<div class="root">
+		<div class="container p-3" style='height:calc(100% - 56px); '>
+		  <div class="row">
+			<div class="col-sm-12" style="width:100%;">
+				<div class="row">
+					{% for movie in movie_list %}
+						<div class="col-sm-4">
+					      {% include "movie/movie_card.html" %}
+					    </div>
+				    {% endfor %}	
+				</div>
+			</div>
+			<div class="col-sm-12 d-flex justify-content-center">
+				{% include "movie/pagination-bar.html" %}
+			</div>
+		  </div>
+		</div>	
 	</div>
+	
 {% endblock content %}

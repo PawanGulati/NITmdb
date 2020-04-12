@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+# resizing image pillow
+from PIL import Image
 # Create your models here.to, on_delete
 
 
@@ -29,6 +31,35 @@ class Movie(models.Model):
     release_date = models.DateTimeField(null=True)
     IMDB_rating = models.FloatField(default=0)
     director = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    cast = models.CharField(max_length=100, null=True)
+
+    carousal_pic1 = models.ImageField(
+        upload_to='movies', null=True, blank=True)
+    carousal_pic2 = models.ImageField(
+        upload_to='movies', null=True, blank=True)
+    carousal_pic3 = models.ImageField(
+        upload_to='movies', null=True, blank=True)
+
+    def truncate_str(self):
+        return self.description[0:100] + ' ....'
 
     def __str__(self):
         return self.movie_name
+
+    # implementing image resizing
+    def save(self):
+        super().save()
+        img = Image.open(self.poster_image.path)
+        if img.height > 100 or img.width > 100:
+            print(0)
+            output_size = (100, 100)
+            img.thumbnail(output_size)
+            img.save(self.poster_image.path)
+
+
+class Reviews(models.Model):
+    pass
+
+
+class Download_links(models.Model):
+    pass
