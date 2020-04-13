@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'movie.apps.MovieConfig',
+    'user.apps.UserConfig',
 
     'crispy_forms'
 
@@ -133,3 +134,6 @@ STATICFILES_DIRS = [
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+LOGIN_REDIRECT_URL = 'movie_list'
+LOGIN_URL = 'login'

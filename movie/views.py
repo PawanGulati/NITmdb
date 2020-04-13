@@ -23,7 +23,7 @@ class MovieCreateView(LoginRequiredMixin, CreateView):
               'IMDB_rating', 'cast', 'carousal_pic1', 'carousal_pic2', 'carousal_pic3']
 
     def form_valid(self, form):
-        form.instance.author = self.request.user
+        form.instance.director = self.request.user
         return super().form_valid(form)
 
 
@@ -48,7 +48,7 @@ class MovieDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     fields = ['movie_name', 'description', 'poster_image', 'genre', 'language',
               'IMDB_rating', 'cast', 'carousal_pic1', 'carousal_pic2', 'carousal_pic3']
 
-    success_url = reverse_lazy('/')
+    success_url = reverse_lazy('movie_list')
 
     def test_func(self):
         movie = self.get_object()

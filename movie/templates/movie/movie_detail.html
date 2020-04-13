@@ -12,18 +12,27 @@
 				<div>
 					<h3>{{movie.movie_name}}</h3>
 					<p>{{movie.description}}</p>
-					<h6>CAST : 	<em>{{movie.cast}}</em></h6>
-					<h6><em>Category : </em>{{movie.genre}}</h6>
-					<h6><em>IMDB rating : </em>{{movie.IMDB_rating}}</h6>
+					<div class="d-flex">
+						<div>
+							<h6>CAST : 	<em>{{movie.cast}}</em></h6>
+							<h6><em>Category : </em>{{movie.genre}}</h6>
+							<h6><em>IMDB rating : </em>{{movie.IMDB_rating}}</h6>	
+						</div>
+						<div class="pl-5">
+							<a href="{% url 'movie_update' movie.id %}" class="btn btn-warning mr-4" title="movie-update">Update It</a>
+							<a href="{% url 'movie_delete' movie.id %}" class="btn btn-danger" title="movie-delete">Delete It</a>
+						</div>
+					</div>
+					
 				</div>
 			</div>
 			<div class="col-sm-12 mt-4 p-2 d-flex justify-content-around align-items-center" style="border:1px solid black; height:12rem">
 				<h3>Download LINKS : </h3>
 				<br>
-				<a href="#" class="btn btn-danger">DOWNLOAD LINK 1</a>
-				<a href="#" class="btn btn-danger">DOWNLOAD LINK 2</a>
-				<a href="#" class="btn btn-danger">DOWNLOAD LINK 3</a>
-				<a href="#" class="btn btn-danger">DOWNLOAD LINK 4</a>
+				<a href="#" class="btn btn-info">DOWNLOAD LINK 1</a>
+				<a href="#" class="btn btn-info">DOWNLOAD LINK 2</a>
+				<a href="#" class="btn btn-info">DOWNLOAD LINK 3</a>
+				<a href="#" class="btn btn-info">DOWNLOAD LINK 4</a>
 			</div>
 			<div class="col-sm-12 mt-4 p-2" style="border:1px solid black; ">
 				<h3>Comments</h3>

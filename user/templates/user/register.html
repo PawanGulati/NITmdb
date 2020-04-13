@@ -1,21 +1,21 @@
 {% extends "movie/base.html" %}
-{% load crispy_tags %}
+{% load crispy_forms_tags %}
 {% block content %}
-	<div>
+	<div class="container">
 		{% if messages %}
 			<ul class="messages">
 			    {% for message in messages %}
-			    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+			    <div class="alert alert-{{ message.tags }}" {% if message.tags %} {% endif %}>{{ message }}</li>
 			    {% endfor %}
 			</ul>
 		{% endif %}
-		<form method="get" accept-charset="utf-8">
+		<form method="post" accept-charset="utf-8">
 			{% csrf_token %}
 			{{form|crispy}}	
 			<button class="btn btn-outline-info" type="submit">SignUp</button>		
 		</form>
 		<div>
-			<small class="text-muted">Already have an account?<a href="#">SignIn</a></small>		
+			<small class="text-muted">Already have an account?<a href="{% url 'login' %}"> SignIn</a></small>		
 		</div>		
 	</div>	
 {% endblock content %}
