@@ -1,0 +1,12 @@
+{% extends "movie/base.html" %}
+{% block content %}
+	<div class="container">
+		<form method="post" accept-charset="utf-8">
+			<center><h2>Are you sure you wanna delete ?</h2></center>
+			<br>
+			<button type="submit">YES, for sure</button>
+			<a href="{% url 'movie_detail' movie.id %}">Cancel</a>
+		</form>
+		
+	</div>
+{% endblock content %}

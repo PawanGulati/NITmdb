@@ -40,6 +40,8 @@ INSTALLED_APPS = [
 
     'movie.apps.MovieConfig',
 
+    'crispy_forms'
+
 ]
 
 MIDDLEWARE = [
@@ -129,3 +131,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

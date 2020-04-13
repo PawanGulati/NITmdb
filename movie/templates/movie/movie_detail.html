@@ -7,13 +7,14 @@
 			<div class="col-sm-12">
 				{% include "movie/movie-carousal.html" %}
 			</div>
-			<div class="col-sm-12 mt-4 p-2 d-flex" style="border:1px solid black; height:12rem">
+			<div class="col-sm-12 mt-4 p-2 d-flex" style="border:1px solid black; height:13rem">
 				<img src="{{movie.poster_image.url}}" alt="titleImage" style="width:20%;" class="mr-3">
 				<div>
 					<h3>{{movie.movie_name}}</h3>
 					<p>{{movie.description}}</p>
-					<h5><em>Category : </em>{{movie.genre}}</h5>
-					<h5><em>IMDB rating : </em>{{movie.IMDB_rating}}</h5>
+					<h6>CAST : 	<em>{{movie.cast}}</em></h6>
+					<h6><em>Category : </em>{{movie.genre}}</h6>
+					<h6><em>IMDB rating : </em>{{movie.IMDB_rating}}</h6>
 				</div>
 			</div>
 			<div class="col-sm-12 mt-4 p-2 d-flex justify-content-around align-items-center" style="border:1px solid black; height:12rem">

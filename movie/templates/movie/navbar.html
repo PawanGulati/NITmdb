@@ -1,20 +1,38 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-secondary justify-content-between">
+<nav class="navbar navbar-expand-lg navbar-dark bg-secondary justify-content-between sticky-top">
   <a class="navbar-brand" href="{% url 'movie_list' %}">NITmdb</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+  <ul class="list-unstyled d-flex pt-3">
+    <li class="nav-item text-light dropdown">
+      <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+        GENRE   
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="#">ACTION</a>
+        <a class="dropdown-item" href="#">COMEDY</a>
+        <a class="dropdown-item" href="#">CRIME</a>
+        <a class="dropdown-item" href="#">ROMANCE</a>
+        <a class="dropdown-item" href="#">MYSTARY</a>
+      </div>  
+    </li>
+    <li class="nav-item text-light dropdown">
+      <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+        LANGUAGE
+      </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">ENGLISH</a>
+          <a class="dropdown-item" href="#">HINDI</a>
+          <a class="dropdown-item" href="#">KOREAN</a>
+          <a class="dropdown-item" href="#">CHINEESE</a>
+          <a class="dropdown-item" href="#">FRENCH</a>
+        </div>  
+    </li>
+  </ul>
+  
 
-  <li class="nav-item text-light dropdown">
-    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Dropdown
-    </a>
-    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-      <a class="dropdown-item" href="#">Action</a>
-    </div>
-  </li>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent" style="padding-left:50%">
+    <ul class="navbar-nav mr-auto ">
       <li class="nav-item active">
         <a class="nav-link" href="{% url 'movie_list' %}">Movies<span class="sr-only">(current)</span></a>
       </li>
