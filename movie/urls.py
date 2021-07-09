@@ -7,4 +7,6 @@ urlpatterns = [
     path('new/', views.MovieCreateView.as_view(), name='movie_create'),
     path('<int:pk>/update/', views.MovieUpdateView.as_view(), name='movie_update'),
     path('<int:pk>/delete/', views.MovieDeleteView.as_view(), name='movie_delete'),
+    path('search/>', views.MovieSearchView.as_view(), name='movie_search'),
+
 ]

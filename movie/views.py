@@ -57,6 +57,17 @@ class MovieDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         return False
 
 
+class MovieListView(ListView):
+    model = Movie
+    ordering = ['-release_date']
+    movie_value = request.GET.get('movie_searched')
+
+    paginate_by = 6
+
+    def get_queryset(self):
+        movies =
+
+
 class GenreListView(ListView):
     pass
 
